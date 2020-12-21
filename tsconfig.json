@@ -1,0 +1,26 @@
+/*
+  This is a "Solution Style" tsconfig.json file, and is used by editors and TypeScript’s language server to improve development experience.
+  It is not intended to be used to perform a compilation.
+
+  To learn more about this file see: https://angular.io/config/solution-tsconfig.
+*/
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "target": "es5"
+  },
+  "references": [
+    {
+      "path": "./projects/careers-info/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/careers-info/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/form-controls/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/form-controls/tsconfig.spec.json"
+    }
+]
+}

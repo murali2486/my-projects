@@ -1,0 +1,44 @@
+{
+    "menus": {
+        "topmenu": [
+            {
+                "name": "Home",
+                "url": "/acchome"
+            },
+            {
+                "name": "How it works",
+                "url": "",
+                "submenu": [{
+                    "name": "Action",
+                    "url": "#"
+                },
+                {
+                    "name": "Another Action",
+                    "url": "#"
+                }]
+            },
+            {
+                "name": "Register Event",
+                "url": "/registerevent"
+            },
+            {
+                "name": "My Account",
+                "url": "/account"
+            }
+        ],
+        "leftmenu": [
+            {
+                "name": "Dashboard",
+                "url": "/dashboard"
+            },
+            {
+                "name": "Events",
+                "url": "/events"
+            },
+            {
+                "name": "Scoring",
+                "url": "/scoring"
+            }
+        ]
+    }
+}

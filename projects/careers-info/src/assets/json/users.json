@@ -1,0 +1,223 @@
+{
+  "users": [
+    {
+      "userid": "1",
+      "username": "user",
+      "firstname": "fn",
+      "lastname": "ln",
+      "email": "user@email.com",
+      "role": "1",
+      "menus": {
+        "headermenu": [
+          {
+            "name": "Home",
+            "url": "/home"
+          },
+          {
+            "name": "How it works",
+            "url": "",
+            "submenu": [
+              {
+                "name": "Action",
+                "url": "#"
+              },
+              {
+                "name": "Another Action",
+                "url": "#"
+              }
+            ]
+          },
+          {
+            "name": "Register Event",
+            "url": "/registerevent"
+          },
+          {
+            "name": "My Account",
+            "url": "/account"
+          }
+        ],
+        "leftmenu": [
+          {
+            "name": "Dashboard",
+            "url": "/dashboard"
+          },
+          {
+            "name": "Events",
+            "url": "/events"
+          },
+          {
+            "name": "Scoring",
+            "url": "/scoring"
+          }
+        ]
+      },
+      "pages": [
+        {
+          "pageid": "",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "userid": "2",
+      "username": "admin",
+      "firstname": "adminfn",
+      "lastname": "adminln",
+      "email": "admin@email.com",
+      "role": "2",
+      "menus": {
+        "headermenu": [
+          {
+            "name": "Home",
+            "url": "/acchome"
+          },
+          {
+            "name": "How it works",
+            "url": "",
+            "submenu": [
+              {
+                "name": "Action",
+                "url": "#"
+              },
+              {
+                "name": "Another Action",
+                "url": "#"
+              }
+            ]
+          },
+          {
+            "name": "Register Event",
+            "url": "/registerevent"
+          },
+          {
+            "name": "My Account",
+            "url": "/account"
+          }
+        ],
+        "leftmenu": [
+          {
+            "name": "Dashboard",
+            "url": "/dashboard"
+          },
+          {
+            "name": "Events",
+            "url": "/events"
+          },
+          {
+            "name": "Scoring",
+            "url": "/scoring"
+          },
+          {
+            "name": "Manage Users",
+            "url": "/manageuser"
+          },
+          {
+            "name": "Pages",
+            "url": "/pages"
+          },
+          {
+            "name": "Modules",
+            "url": "/modules"
+          }
+        ]
+      },
+      "pages": [
+        {
+          "pageid": "",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "userid": "3",
+      "username": "superuser",
+      "firstname": "superfn",
+      "lastname": "lastfn",
+      "email": "super@email.com",
+      "role": "3",
+      "menus": {
+        "headermenu": [
+          {
+            "name": "Home",
+            "url": "/acchome"
+          },
+          {
+            "name": "How it works",
+            "url": "",
+            "submenu": [
+              {
+                "name": "Action",
+                "url": "#"
+              },
+              {
+                "name": "Another Action",
+                "url": "#"
+              }
+            ]
+          },
+          {
+            "name": "My Account",
+            "url": "/account"
+          }
+        ],
+        "leftmenu": [
+          {
+            "name": "Dashboard",
+            "url": "/dashboard"
+          },
+          {
+            "name": "Events",
+            "url": "/events"
+          }
+        ]
+      },
+      "pages": [
+        {
+          "pageid": "",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "userid": "",
+      "username": "",
+      "firstname": "",
+      "lastname": "",
+      "email": "",
+      "role": "",
+      "menus": {
+        "headermenu": [
+          {
+            "name": "Home",
+            "url": "/acchome"
+          },
+          {
+            "name": "How it works",
+            "url": "",
+            "submenu": [
+              {
+                "name": "Action",
+                "url": "#"
+              },
+              {
+                "name": "Another Action",
+                "url": "#"
+              }
+            ]
+          },
+          {
+            "name": "Event",
+            "url": "/events"
+          }
+        ],
+        "leftmenu": []
+      },
+      "pages": [
+        {
+          "pageid": "",
+          "name": ""
+        }
+      ]
+    }
+  ]
+}

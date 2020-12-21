@@ -1,0 +1,66 @@
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Charity</a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            How It Works
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <a *ngIf="!authService.isUserLoggedIn" class="nav-link" href="#" (click)="login()">Login</a>
+        <a *ngIf="authService.isUserLoggedIn" class="nav-link" href="#" (click)="logout()">Logout</a>
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav> -->
+  <nav class="navbar fixed-top navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav">
+    <!-- SideNav slide-out button -->
+    <div class="float-left">
+      <a href="#" data-activates="slide-out" class="button-collapse"><i class="fas fa-bars"></i></a>
+    </div>
+    <!-- Breadcrumb-->
+    <div class="breadcrumb-dn mr-auto">
+      <p>Site Name</p>
+    </div>
+    <ul class="nav navbar-nav nav-flex-icons ml-auto">
+      <li class="nav-item" *ngFor="let menu of masterService.topMenu">
+        <a class="nav-link" [routerLink]="[menu.url]"><i class="fas fa-envelope"></i> <span class="clearfix d-none d-sm-inline-block">{{menu.name}}</span></a>
+      </li>
+      <!-- <li class="nav-item">
+        <a class="nav-link"><i class="fas fa-comments"></i> <span class="clearfix d-none d-sm-inline-block">Support</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"><i class="fas fa-user"></i> <span class="clearfix d-none d-sm-inline-block">Account</span></a>
+      </li> -->
+      <li class="nav-item" *ngIf="!authService.isUserLoggedIn">
+        <a class="nav-link" (click)="login()"><i class="fas fa-user"></i> <span class="clearfix d-none d-sm-inline-block">Login</span></a>
+      </li>
+      <li class="nav-item" *ngIf="authService.isUserLoggedIn">
+        <a class="nav-link" (click)="logout()"><i class="fas fa-user"></i> <span class="clearfix d-none d-sm-inline-block">Logout</span></a>
+      </li>
+      <!-- <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li> -->
+    </ul>
+  </nav>
