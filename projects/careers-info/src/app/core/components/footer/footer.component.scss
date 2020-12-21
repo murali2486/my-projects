@@ -1,0 +1,33 @@
+.flex-container{
+  display:flex;
+  background-color:  #00b33c;
+  min-height:200px;
+  color: #ffffff;
+  justify-content: center;
+  .footer-menu-1, .footer-menu-2{
+    width: 300px;
+  }
+  .footer-content{
+    width: 500px;
+    padding: 10px;
+    margin: 30px;
+  }
+  .footer-menu-1, .footer-menu-2{
+    padding: 10px;
+    margin: 30px;
+  }
+  ul{
+    margin:0;
+    padding:0;
+    li{
+      list-style-type: none;
+    }
+  }
+}
+.footer{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color:#006622;
+  color: #ffffff;
+}

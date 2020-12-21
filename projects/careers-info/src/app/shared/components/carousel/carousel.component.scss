@@ -1,2 +1,5 @@
 .carouselImage { width:100%; }
 ::ng-deep .container-fluid { padding:0 !important; }
+::ng-deep .carousel-inner{
+  height: 300px;
+}
