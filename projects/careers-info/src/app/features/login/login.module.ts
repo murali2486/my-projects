@@ -9,6 +9,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { FormControlsModule } from '../../../../../form-controls/src/public-api';
 
 
 
@@ -20,7 +21,8 @@ import { RegisterComponent } from './components/register/register.component';
     CoreModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
+    FormControlsModule
   ]
 })
 export class LoginModule { }

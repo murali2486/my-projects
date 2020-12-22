@@ -10,7 +10,10 @@
     "lib": [
       "dom",
       "es2018"
-    ]
+    ],
+    "paths": {
+      "formcontrols":["dist/formcontrols"]
+    }
   },
   "angularCompilerOptions": {
     "skipTemplateCodegen": true,
