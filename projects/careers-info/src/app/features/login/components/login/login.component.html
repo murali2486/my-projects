@@ -24,8 +24,13 @@
   </form>
 </div>
 <!-- <div [formGroup]="form">
-  <lib-input [field]="field"></lib-input>
-</div> -->
+  <div *ngFor="let field of fieldGroup">
+    <div *ngIf="field.type === 'text'">
+      <lib-input [field]="field" [form]="form"></lib-input>
+    </div>
+  </div>
+</div>
+{{this.form.value | json}} -->
 
 
 

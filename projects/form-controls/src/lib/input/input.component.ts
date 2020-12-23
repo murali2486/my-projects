@@ -8,11 +8,10 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class InputComponent implements OnInit {
   @Input() field;
-  form:FormGroup;
+  @Input() form;
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
-    this.form = new FormGroup({});
     this.createControl(this.field);
   }
 

@@ -14,11 +14,12 @@ import { SelectComponent } from './select/select.component';
 import { TextareaComponent } from './textarea/textarea.component';
 import { CheckboxComponent } from './checkbox/checkbox.component';
 import { RadioComponent } from './radio/radio.component';
+import { ButtonComponent } from './button/button.component';
 
 
 
 @NgModule({
-  declarations: [FormControlsComponent, InputComponent, SelectComponent, TextareaComponent, CheckboxComponent, RadioComponent],
+  declarations: [FormControlsComponent, InputComponent, SelectComponent, TextareaComponent, CheckboxComponent, RadioComponent, ButtonComponent],
   imports: [
     CommonModule,
     FormsModule,

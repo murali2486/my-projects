@@ -16,33 +16,62 @@ export class LoginComponent implements OnInit {
   loading = false;
   submitted = false;
   returnUrl: string;
-  field = {
-    label: 'First Name',
-    controlName: 'firstname',
-    value: '',
-    type: 'text',
-    className: '',
-    ngClass:'',
-    minLength: '',
-    maxLength: '',
-    required: false,
-    pattern: '',
-    disabled: false,
-    readonly: false,
-    size: 16,
-    minDate:'',
-    maxDate: '',
-    fileType: '',
-    placeHolder: '',
-    step: 0,
-    min: 0,
-    max: 10,
-    width: 0,
-    height: 0,
-    autocomplete: 'off',
-    rows:0,
-    columns:0
-  };
+  fieldGroup = [
+    {
+      label: 'First Name',
+      controlName: 'firstname',
+      value: '',
+      type: 'text',
+      className: '',
+      ngClass:'',
+      minLength: '',
+      maxLength: '',
+      required: true,
+      pattern: '',
+      disabled: false,
+      readonly: false,
+      size: 16,
+      minDate:'',
+      maxDate: '',
+      fileType: '',
+      placeHolder: '',
+      step: 0,
+      min: 0,
+      max: 10,
+      width: 0,
+      height: 0,
+      autocomplete: 'off',
+      rows:0,
+      columns:0
+    },
+    {
+      label: 'Last Name',
+      controlName: 'lastname',
+      value: '',
+      type: 'text',
+      className: '',
+      ngClass:'',
+      minLength: '',
+      maxLength: '',
+      required: false,
+      pattern: '',
+      disabled: false,
+      readonly: false,
+      size: 16,
+      minDate:'',
+      maxDate: '',
+      fileType: '',
+      placeHolder: '',
+      step: 0,
+      min: 0,
+      max: 10,
+      width: 0,
+      height: 0,
+      autocomplete: 'off',
+      rows:0,
+      columns:0
+    }
+  ];
   form: FormGroup;
   constructor(
     private formBuilder: FormBuilder,
@@ -59,6 +88,9 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = new FormGroup({});
+    this.form.valueChanges.subscribe(value => {
+      console.log(this.form);
+    });
     this.loginForm = this.formBuilder.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
