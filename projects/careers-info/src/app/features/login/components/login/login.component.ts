@@ -16,6 +16,34 @@ export class LoginComponent implements OnInit {
   loading = false;
   submitted = false;
   returnUrl: string;
+  field = {
+    label: 'First Name',
+    controlName: 'firstname',
+    value: '',
+    type: 'text',
+    className: '',
+    ngClass:'',
+    minLength: '',
+    maxLength: '',
+    required: false,
+    pattern: '',
+    disabled: false,
+    readonly: false,
+    size: 16,
+    minDate:'',
+    maxDate: '',
+    fileType: '',
+    placeHolder: '',
+    step: 0,
+    min: 0,
+    max: 10,
+    width: 0,
+    height: 0,
+    autocomplete: 'off',
+    rows:0,
+    columns:0
+  };
+  form: FormGroup;
   constructor(
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
@@ -30,6 +58,7 @@ export class LoginComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.form = new FormGroup({});
     this.loginForm = this.formBuilder.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
