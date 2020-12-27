@@ -69,7 +69,10 @@ export class LoginComponent implements OnInit {
       height: 0,
       autocomplete: 'off',
       rows:0,
-      columns:0
+      columns:0,
+      checked: false,
+      labelPosition: 'after',
+      dropdownItems:[]
     }
   ];
   form: FormGroup;

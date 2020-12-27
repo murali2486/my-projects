@@ -1,1 +1,10 @@
-<p>radio works!</p>
+<div [formGroup]="form">
+  <mat-radio-group
+  aria-labelledby="field.label"
+  [class]="field.class"
+  [formControlName]="field.controlName">
+  <mat-radio-button [class]="field.class" [ngClass]="field.ngClass" *ngFor="let control of field.radioControls" [value]="control">
+    {{control}}
+  </mat-radio-button>
+</mat-radio-group>
+</div>
