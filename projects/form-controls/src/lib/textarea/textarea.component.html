@@ -1,1 +1,13 @@
-<p>textarea works!</p>
+<div [formGroup]="form">
+  <mat-form-field appearance="outline">
+    <mat-label>{{field.label}}</mat-label>
+    <textarea matInput placeholder="Ex. It makes me feel..."
+    [formControlName]="field.controlName"
+    [class] = "field.className"
+    [ngClass] = "field.ngClass"
+    [rows] = "field.rows"
+    [cols] = "field.cols"
+    ></textarea>
+    <mat-error *ngIf="this.form.controls[field.controlName].hasError('required')">This field is required</mat-error>
+</mat-form-field>
+</div>
