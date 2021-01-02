@@ -11,4 +11,5 @@ export * from './lib/radio/radio.component';
 export * from './lib/textarea/textarea.component';
 export * from './lib/button/button.component';
 export * from './lib/create-form/create-form.component';
+export * from './lib/button-toggle/button-toggle.component';
 export * from './lib/form-controls.module';

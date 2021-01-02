@@ -312,7 +312,9 @@ export abstract class Constants {
         href:'',
         target:'',
         icon:'',
-        radioControls:[]
+        radioControls:[],
+        toggleValues: [],
+        toggleType:''
       },
       {
         label: 'Password',
@@ -348,7 +350,9 @@ export abstract class Constants {
         href:'',
         target:'',
         icon:'',
-        radioControls:[]
+        radioControls:[],
+        toggleValues: [],
+        toggleType:''
       }
     ];
 
@@ -387,7 +391,9 @@ export abstract class Constants {
         href:'',
         target:'',
         icon:'',
-        radioControls:[]
+        radioControls:[],
+        toggleValues: [],
+        toggleType:''
       },
       {
         label: 'Last Name',
@@ -423,7 +429,9 @@ export abstract class Constants {
         href:'',
         target:'',
         icon:'',
-        radioControls:[]
+        radioControls:[],
+        toggleValues: [],
+        toggleType:''
       },
       {
         label: 'User Name',

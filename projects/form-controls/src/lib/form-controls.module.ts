@@ -8,7 +8,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDividerModule } from '@angular/material/divider';
-
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 
 import { FormControlsComponent } from './form-controls.component';
@@ -19,6 +19,7 @@ import { CheckboxComponent } from './checkbox/checkbox.component';
 import { RadioComponent } from './radio/radio.component';
 import { ButtonComponent } from './button/button.component';
 import { CreateFormComponent } from './create-form/create-form.component';
+import { ButtonToggleComponent } from './button-toggle/button-toggle.component';
 
 
 
@@ -31,7 +32,8 @@ import { CreateFormComponent } from './create-form/create-form.component';
     CheckboxComponent,
     RadioComponent,
     ButtonComponent,
-    CreateFormComponent
+    CreateFormComponent,
+    ButtonToggleComponent
   ],
   imports: [
     CommonModule,
@@ -43,7 +45,8 @@ import { CreateFormComponent } from './create-form/create-form.component';
     MatCheckboxModule,
     MatRadioModule,
     MatSelectModule,
-    MatDividerModule
+    MatDividerModule,
+    MatButtonToggleModule
   ],
   exports: [
     FormControlsComponent,
@@ -53,7 +56,8 @@ import { CreateFormComponent } from './create-form/create-form.component';
     CheckboxComponent,
     RadioComponent,
     ButtonComponent,
-    CreateFormComponent
+    CreateFormComponent,
+    ButtonToggleComponent
   ]
 })
 export class FormControlsModule { }

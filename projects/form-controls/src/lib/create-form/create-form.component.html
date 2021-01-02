@@ -18,5 +18,8 @@
     <div *ngIf="field.type === 'textarea'">
       <lib-textarea [field]="field" [form]="form"></lib-textarea>
     </div>
+    <div *ngIf="field.type === 'toggleButton'">
+      <lib-button-toggle [field]="field" [form]="form"></lib-button-toggle>
+    </div>
   </div>
 </form>
