@@ -1,5 +1,11 @@
 .flex-container{
-  width: 100%;
+  width: 20%;
+  display: block;
+  margin: auto;
+}
+lib-button{
+  width:50%;
+}
+btn-group{
   display: flex;
-  justify-content: center;
 }

@@ -1,46 +1,45 @@
-<section *ngIf="field.type === 'mat-button'">
-    <button mat-button [color]="field.color" [disabled]="field.disabled">{{field.label}}</button>
+<section *ngIf="field.btnType === 'mat-button'">
+  <button mat-button [color]="field.color" [disabled]="isDisabled">{{field.label}}</button>
 </section>
-<section *ngIf="field.type === 'mat-button-link'">
-  <a mat-button [href]="field.href" [target]="field.target">{{field.label}}</a>
-</section>
-
-<section *ngIf="field.type === 'mat-raised-button'">
-  <button mat-raised-button [color]="field.color" [disabled]="field.disabled">{{field.label}}</button>
-</section>
-<section *ngIf="field.type === 'mat-raised-button-link'">
-<a mat-raised-button [href]="field.href" [target]="field.target">{{field.label}}</a>
+<section *ngIf="field.btnType === 'mat-button-link'">
+  <a mat-button [href]="field.href" [target]="field.target" [disabled]="isDisabled">{{field.label}}</a>
 </section>
 
-<section *ngIf="field.type === 'mat-stroked-button'">
-  <button mat-stroked-button [color]="field.color" [disabled]="field.disabled">{{field.label}}</button>
+<section *ngIf="field.btnType === 'mat-raised-button'">
+  <button mat-raised-button [color]="field.color" [disabled]="isDisabled">{{field.label}}</button>
 </section>
-<section *ngIf="field.type === 'mat-stroked-button-link'">
-<a mat-stroked-button [href]="field.href" [target]="field.target">{{field.label}}</a>
-</section>
-
-<section *ngIf="field.type === 'mat-flat-button'">
-  <button mat-flat-button [color]="field.color" [disabled]="field.disabled">{{field.label}}</button>
-</section>
-<section *ngIf="field.type === 'mat-flat-button-link'">
-<a mat-flat-button [href]="field.href" [target]="field.target">{{field.label}}</a>
+<section *ngIf="field.btnType === 'mat-raised-button-link'">
+  <a mat-raised-button [href]="field.href" [target]="field.target" [disabled]="isDisabled">{{field.label}}</a>
 </section>
 
-<section *ngIf="field.type === 'mat-icon-button'">
-  <button mat-icon-button [color]="field.color" [attr.aria-label]="field.aria">
+<section *ngIf="field.btnType === 'mat-stroked-button'">
+  <button mat-stroked-button [color]="field.color" [disabled]="isDisabled">{{field.label}}</button>
+</section>
+<section *ngIf="field.btnType === 'mat-stroked-button-link'">
+  <a mat-stroked-button [href]="field.href" [target]="field.target" [disabled]="isDisabled">{{field.label}}</a>
+</section>
+
+<section *ngIf="field.btnType === 'mat-flat-button'">
+  <button mat-flat-button [color]="field.color" [disabled]="isDisabled">{{field.label}}</button>
+</section>
+<section *ngIf="field.btnType === 'mat-flat-button-link'">
+  <a mat-flat-button [href]="field.href" [target]="field.target" [disabled]="isDisabled">{{field.label}}</a>
+</section>
+
+<section *ngIf="field.btnType === 'mat-icon-button'">
+  <button mat-icon-button [color]="field.color" [attr.aria-label]="field.aria" [disabled]="isDisabled">
     <mat-icon>{{field.icon}}</mat-icon>
   </button>
 </section>
 
-<section *ngIf="field.type === 'mat-fab'">
-  <button mat-fab [color]="field.color" [attr.aria-label]="field.aria">
+<section *ngIf="field.btnType === 'mat-fab'">
+  <button mat-fab [color]="field.color" [attr.aria-label]="field.aria" [disabled]="isDisabled">
     <mat-icon>{{field.icon}}</mat-icon>
   </button>
 </section>
 
-<section *ngIf="field.type === 'mat-mini-fab'">
-  <button mat-mini-fab [color]="field.color" [attr.aria-label]="field.aria">
+<section *ngIf="field.btnType === 'mat-mini-fab'">
+  <button mat-mini-fab [color]="field.color" [attr.aria-label]="field.aria" [disabled]="isDisabled">
     <mat-icon>{{field.icon}}</mat-icon>
   </button>
 </section>
-

@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { AuthenticationService } from './../../../../core/services/authentication.service';
 import { AlertService } from './../../../../core/services/alert.service';
 import { UserService } from './../../../../core/services/user.service';
-
+import { Constants } from './../../../../core/utilities/constants';
 import { first } from 'rxjs/operators';
 
 @Component({
@@ -13,9 +13,22 @@ import { first } from 'rxjs/operators';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-  registerForm: FormGroup;
+  form: FormGroup;
   loading = false;
   submitted = false;
+  fieldGroup = Constants.REGISTER_FORM;
+  register = {
+    btnType: 'mat-raised-button',
+    color: 'primary',
+    disabled: false,
+    label: 'Register'
+  }
+  cancel = {
+    btnType: 'mat-raised-button',
+    color: null,
+    disabled: false,
+    label: 'Cancel'
+  }
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
@@ -29,27 +42,12 @@ export class RegisterComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.registerForm = this.formBuilder.group({
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
-      username: ['', Validators.required],
-      password: ['', [Validators.required, Validators.minLength(6)]]
-    });
+    this.form = new FormGroup({});
   }
 
-  // convenience getter for easy access to form fields
-  get f() { return this.registerForm.controls; }
-
   onSubmit() {
-    this.submitted = true;
-
-    // stop here if form is invalid
-    if (this.registerForm.invalid) {
-      return;
-    }
-
     this.loading = true;
-    this.userService.register(this.registerForm.value)
+    this.userService.register(this.form.value)
       .pipe(first())
       .subscribe(
         data => {
@@ -61,5 +59,7 @@ export class RegisterComponent implements OnInit {
           this.loading = false;
         });
   }
-
+  redirect(){
+    this.router.navigate(['login']);
+  }
 }

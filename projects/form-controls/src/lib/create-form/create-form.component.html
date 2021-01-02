@@ -1,0 +1,22 @@
+<form [formGroup]="form">
+  <div *ngFor="let field of fieldGroup">
+    <div *ngIf="field.type === 'text'">
+      <lib-input [field]="field" [form]="form"></lib-input>
+    </div>
+    <div *ngIf="field.type === 'password'">
+      <lib-input [field]="field" [form]="form"></lib-input>
+    </div>
+    <div *ngIf="field.type === 'select'">
+      <lib-select [field]="field" [form]="form"></lib-select>
+    </div>
+    <div *ngIf="field.type === 'checkbox'">
+      <lib-checkbox [field]="field" [form]="form"></lib-checkbox>
+    </div>
+    <div *ngIf="field.type === 'radio'">
+      <lib-radio [field]="field" [form]="form"></lib-radio>
+    </div>
+    <div *ngIf="field.type === 'textarea'">
+      <lib-textarea [field]="field" [form]="form"></lib-textarea>
+    </div>
+  </div>
+</form>

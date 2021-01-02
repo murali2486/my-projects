@@ -1,7 +1,5 @@
 <div [formGroup]="form">
-  <mat-form-field>
     <mat-checkbox [class]="field.class" [ngClass]="field.ngClass" [formControlName]="field.controlName"
-      [labelPosition]="field.labelPosition" [disabled]="field.disabled"> {{ field.label }}
+      [labelPosition]="field.labelPosition" [attr.disabled]="field.disabled"> {{ field.label }}
     </mat-checkbox>
-  </mat-form-field>
 </div>

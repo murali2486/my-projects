@@ -1,5 +1,4 @@
-<div class="flex-container">
-  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <!-- <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
         <label for="firstName">First Name</label>
         <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
@@ -36,6 +35,12 @@
         </button>
         <a routerLink="/login" class="btn btn-link">Cancel</a>
     </div>
-</form>
+</form> -->
+<div class="flex-container">
+  <lib-create-form [form]="form" [fieldGroup]="fieldGroup"></lib-create-form>
+  <div class="btn-group">
+    <lib-button [field]="register" [isDisabled]="form.invalid" (click)="onSubmit()"></lib-button>
+    <lib-button [field]="cancel" (click)="redirect()"></lib-button>
+  </div>
 </div>
 

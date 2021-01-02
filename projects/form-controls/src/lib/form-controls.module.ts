@@ -10,6 +10,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatDividerModule } from '@angular/material/divider';
 
 
+
 import { FormControlsComponent } from './form-controls.component';
 import { InputComponent } from './input/input.component';
 import { SelectComponent } from './select/select.component';
@@ -17,11 +18,21 @@ import { TextareaComponent } from './textarea/textarea.component';
 import { CheckboxComponent } from './checkbox/checkbox.component';
 import { RadioComponent } from './radio/radio.component';
 import { ButtonComponent } from './button/button.component';
+import { CreateFormComponent } from './create-form/create-form.component';
 
 
 
 @NgModule({
-  declarations: [FormControlsComponent, InputComponent, SelectComponent, TextareaComponent, CheckboxComponent, RadioComponent, ButtonComponent],
+  declarations: [
+    FormControlsComponent,
+    InputComponent,
+    SelectComponent,
+    TextareaComponent,
+    CheckboxComponent,
+    RadioComponent,
+    ButtonComponent,
+    CreateFormComponent
+  ],
   imports: [
     CommonModule,
     FormsModule,
@@ -34,6 +45,15 @@ import { ButtonComponent } from './button/button.component';
     MatSelectModule,
     MatDividerModule
   ],
-  exports: [FormControlsComponent, InputComponent, SelectComponent, TextareaComponent, CheckboxComponent, RadioComponent]
+  exports: [
+    FormControlsComponent,
+    InputComponent,
+    SelectComponent,
+    TextareaComponent,
+    CheckboxComponent,
+    RadioComponent,
+    ButtonComponent,
+    CreateFormComponent
+  ]
 })
 export class FormControlsModule { }

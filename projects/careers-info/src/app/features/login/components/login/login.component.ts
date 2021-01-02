@@ -12,83 +12,24 @@ import { Constants } from './../../../../core/utilities/constants';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  loginForm: FormGroup;
+  // loginForm: FormGroup;
   loading = false;
   submitted = false;
   returnUrl: string;
-  fieldGroup = [
-    {
-      label: 'First Name',
-      controlName: 'firstname',
-      value: '',
-      type: 'text',
-      className: '',
-      ngClass:'',
-      minLength: '',
-      maxLength: '',
-      required: true,
-      pattern: '',
-      disabled: false,
-      readonly: false,
-      size: 16,
-      minDate:'',
-      maxDate: '',
-      fileType: '',
-      placeHolder: '',
-      step: 0,
-      min: 0,
-      max: 10,
-      width: 0,
-      height: 0,
-      autocomplete: 'off',
-      rows:0,
-      cols:0,
-      checked: false,
-      labelPosition: 'after',
-      dropdownItems:[],
-      color: null,
-      btnType: 'mat-button',
-      href:'',
-      target:'',
-      icon:''
-    },
-    {
-      label: 'Last Name',
-      controlName: 'lastname',
-      value: '',
-      type: 'text',
-      className: '',
-      ngClass:'',
-      minLength: '',
-      maxLength: '',
-      required: false,
-      pattern: '',
-      disabled: false,
-      readonly: false,
-      size: 16,
-      minDate:'',
-      maxDate: '',
-      fileType: '',
-      placeHolder: '',
-      step: 0,
-      min: 0,
-      max: 10,
-      width: 0,
-      height: 0,
-      autocomplete: 'off',
-      rows:0,
-      cols:0,
-      checked: false,
-      labelPosition: 'after',
-      dropdownItems:[],
-      color: null,
-      btnType: 'mat-button',
-      href:'',
-      target:'',
-      icon:''
-    }
-  ];
+  fieldGroup = Constants.LOGIN_FORM;
   form: FormGroup;
+  login = {
+    btnType: 'mat-raised-button',
+    color: 'primary',
+    disabled: false,
+    label: 'Login'
+  }
+  register = {
+    btnType: 'mat-raised-button',
+    color: null,
+    disabled: false,
+    label: 'Register'
+  }
   constructor(
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
@@ -104,27 +45,11 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = new FormGroup({});
-    this.form.valueChanges.subscribe(value => {
-      console.log(this.form);
-    });
-    this.loginForm = this.formBuilder.group({
-      username: ['', Validators.required],
-      password: ['', Validators.required]
-    });
   }
 
-  get f() { return this.loginForm.controls; }
-
   onSubmit() {
-    this.submitted = true;
-
-    // stop here if form is invalid
-    if (this.loginForm.invalid) {
-        return;
-    }
-
     this.loading = true;
-    this.authenticationService.login(this.f.username.value, this.f.password.value)
+    this.authenticationService.login(this.form.get('username').value, this.form.get('password').value)
       .pipe(first())
       .subscribe(
           data => {
@@ -136,4 +61,7 @@ export class LoginComponent implements OnInit {
           });
   }
 
+  redirect(){
+    this.router.navigate(['register']);
+  }
 }
