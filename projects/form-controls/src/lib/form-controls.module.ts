@@ -20,6 +20,7 @@ import { RadioComponent } from './radio/radio.component';
 import { ButtonComponent } from './button/button.component';
 import { CreateFormComponent } from './create-form/create-form.component';
 import { ButtonToggleComponent } from './button-toggle/button-toggle.component';
+import { CreateArrayGroupComponent } from './create-array-group/create-array-group.component';
 
 
 
@@ -33,7 +34,8 @@ import { ButtonToggleComponent } from './button-toggle/button-toggle.component';
     RadioComponent,
     ButtonComponent,
     CreateFormComponent,
-    ButtonToggleComponent
+    ButtonToggleComponent,
+    CreateArrayGroupComponent
   ],
   imports: [
     CommonModule,

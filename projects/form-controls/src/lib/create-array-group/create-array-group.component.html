@@ -1,0 +1,75 @@
+<form [formGroup]="form">
+  <div *ngFor="let field of form.get(this.field.formArrayName).controls; let i = index">
+    <div [formGroupName]="i">
+      <div *ngFor="let fieldObj of field.formArrayFields">
+          <div *ngIf="fieldObj.type === 'text' || fieldObj.type === 'password'">
+            <mat-form-field appearance="outline">
+              <mat-label>{{fieldObj.label}}</mat-label>
+              <input
+              matInput
+              [type]="fieldObj.type"
+              [placeholder]="fieldObj.placeholder"
+              [formControlName]="fieldObj.controlName"
+              [size] = "fieldObj.size"
+              [class] = "fieldObj.className"
+              [ngClass] = "fieldObj.ngClass"
+              >
+              <mat-error *ngIf="this.form.controls[field.controlName].hasError('required')">This field is required</mat-error>
+          </mat-form-field>
+          </div>
+          <div *ngIf="fieldObj.type === 'select'">
+            <mat-form-field appearance="fill">
+              <mat-label>{{fieldObj.label}}</mat-label>
+              <mat-select [formControlName]="fieldObj.controlName" name="item.value">
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let item of fieldObj.dropdownItems" [value]="item.value">
+                  {{item.name}}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="this.form.controls[fieldObj.controlName].hasError('required')">{{fieldObj.name}} is required</mat-error>
+            </mat-form-field>
+          </div>
+          <div *ngIf="fieldObj.type === 'checkbox'">
+            <mat-checkbox [class]="fieldObj.class" [ngClass]="fieldObj.ngClass" [formControlName]="fieldObj.controlName"
+                [labelPosition]="fieldObj.labelPosition" [attr.disabled]="fieldObj.disabled"> {{ fieldObj.label }}
+            </mat-checkbox>
+          </div>
+          <div *ngIf="fieldObj.type === 'radio'">
+            <mat-radio-group
+            aria-labelledby="fieldObj.label"
+            [class]="fieldObj.class"
+            [formControlName]="fieldObj.controlName">
+            <mat-radio-button [class]="fieldObj.class" [ngClass]="fieldObj.ngClass" *ngFor="let control of fieldObj.radioControls" [value]="control">
+              {{control}}
+            </mat-radio-button>
+          </mat-radio-group>
+          </div>
+          <div *ngIf="fieldObj.type === 'textarea'">
+            <mat-form-field appearance="outline">
+              <mat-label>{{fieldObj.label}}</mat-label>
+              <textarea matInput [placeholder]="fieldObj.placeholder"
+              [formControlName]="fieldObj.controlName"
+              [class] = "fieldObj.className"
+              [ngClass] = "fieldObj.ngClass"
+              [rows] = "fieldObj.rows"
+              [cols] = "fieldObj.cols"
+              ></textarea>
+              <mat-error *ngIf="this.form.controls[field.controlName].hasError('required')">This field is required</mat-error>
+            </mat-form-field>
+          </div>
+          <div *ngIf="fieldObj.type === 'toggleButton'">
+            <mat-button-toggle-group #group="matButtonToggleGroup" *ngIf="fieldObj.toggleType === 'toggleIcon'" >
+              <mat-button-toggle [value]="toggleVal" *ngFor="let toggleVal of fieldObj.toggleValues" (click)="getToggleValue(group.value, i)">
+                <mat-icon>{{fieldObj.icon}}</mat-icon>
+              </mat-button-toggle>
+            </mat-button-toggle-group>
+            <mat-button-toggle-group #group="matButtonToggleGroup" *ngIf="fieldObj.toggleType === 'toggleLabel'" >
+              <mat-button-toggle [value]="toggleVal" *ngFor="let toggleVal of fieldObj.toggleValues" (click)="getToggleValue(group.value, i)">
+                {{toggleVal}}
+              </mat-button-toggle>
+            </mat-button-toggle-group>
+          </div>
+      </div>
+    </div>
+  </div>
+</form>
