@@ -59,7 +59,8 @@ import { CreateArrayGroupComponent } from './create-array-group/create-array-gro
     RadioComponent,
     ButtonComponent,
     CreateFormComponent,
-    ButtonToggleComponent
+    ButtonToggleComponent,
+    CreateArrayGroupComponent
   ]
 })
 export class FormControlsModule { }

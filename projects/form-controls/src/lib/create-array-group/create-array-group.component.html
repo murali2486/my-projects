@@ -1,5 +1,5 @@
 <form [formGroup]="form">
-  <div *ngFor="let field of form.get(this.field.formArrayName).controls; let i = index">
+  <div [formArrayName]="field.formArrayName" *ngFor="let fieldControl of form.get(field.formArrayName).controls; let i = index">
     <div [formGroupName]="i">
       <div *ngFor="let fieldObj of field.formArrayFields">
           <div *ngIf="fieldObj.type === 'text' || fieldObj.type === 'password'">
@@ -14,7 +14,7 @@
               [class] = "fieldObj.className"
               [ngClass] = "fieldObj.ngClass"
               >
-              <mat-error *ngIf="this.form.controls[field.controlName].hasError('required')">This field is required</mat-error>
+              <mat-error *ngIf="this.form.get(field.formArrayName).controls[i].get(fieldObj.controlName).hasError('required')">This field is required</mat-error>
           </mat-form-field>
           </div>
           <div *ngIf="fieldObj.type === 'select'">
@@ -26,7 +26,7 @@
                   {{item.name}}
                 </mat-option>
               </mat-select>
-              <mat-error *ngIf="this.form.controls[fieldObj.controlName].hasError('required')">{{fieldObj.name}} is required</mat-error>
+              <mat-error *ngIf="this.form.get(field.formArrayName).controls[i].get(fieldObj.controlName).hasError('required')">{{fieldObj.name}} is required</mat-error>
             </mat-form-field>
           </div>
           <div *ngIf="fieldObj.type === 'checkbox'">
@@ -54,7 +54,7 @@
               [rows] = "fieldObj.rows"
               [cols] = "fieldObj.cols"
               ></textarea>
-              <mat-error *ngIf="this.form.controls[field.controlName].hasError('required')">This field is required</mat-error>
+              <mat-error *ngIf="this.form.get(field.formArrayName).controls[i].get(fieldObj.controlName).hasError('required')">This field is required</mat-error>
             </mat-form-field>
           </div>
           <div *ngIf="fieldObj.type === 'toggleButton'">

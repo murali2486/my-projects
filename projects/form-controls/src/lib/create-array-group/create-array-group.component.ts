@@ -26,6 +26,7 @@ export class CreateArrayGroupComponent implements OnInit {
     this.field.formArrayFields.forEach(fieldObj => {
       fg.addControl(fieldObj.controlName, this.fb.control(fieldObj.value,this.getValidators(fieldObj)))
     });
+    return fg;
   }
   getValidators(field){
     let validators = [];

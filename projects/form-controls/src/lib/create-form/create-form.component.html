@@ -21,5 +21,8 @@
     <div *ngIf="field.type === 'toggleButton'">
       <lib-button-toggle [field]="field" [form]="form"></lib-button-toggle>
     </div>
+    <div *ngIf="field.type === 'formGroupArray'">
+      <lib-create-array-group [field]="field" [form]="form"></lib-create-array-group>
+    </div>
   </div>
 </form>
